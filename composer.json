@@ -1,0 +1,56 @@
+{
+  "name": "jgrim/activity-pup",
+  "description": "Activity Pub PHP Library",
+  "license": "MIT",
+  "require": {
+    "php": ">=8.2",
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^6.0|^7.0",
+    "guzzlehttp/psr7": "^1.7|^2.0",
+    "sunrise/hydrator": "^3.0",
+    "ext-fileinfo": "*",
+    "doctrine/annotations": "^1.14"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest",
+    "ext-simplexml": "*",
+    "phpunit/phpunit": "9.5",
+    "mockery/mockery": "^1.6.2",
+    "phpstan/phpstan": "^0.12.100",
+    "friendsofphp/php-cs-fixer": "^2.19.3"
+  },
+  "scripts": {
+    "analyze": "vendor/bin/phpstan analyse -l 6 src/",
+    "php-cs-fixer:lint": "PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix --verbose --dry-run",
+    "php-cs-fixer:format": "PHP_CS_FIXER_IGNORE_ENV=1 vendor/bin/php-cs-fixer fix",
+    "test:unit": "vendor/bin/phpunit --coverage-text --coverage-clover coverage.xml"
+  },
+  "keywords": [
+    "authorization",
+    "authentication",
+    "lemmy",
+    "sdk",
+    "fediverse",
+    "activitypub",
+    "lemmy-ui",
+    "api"
+  ],
+  "authors": [
+    {
+      "name": "Jason Grim",
+      "email": "jason@gr.im",
+      "homepage": "http://www.jasongr.im",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "JGrim\\ActivityPub\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "JGrim\\ActivityPub\\Tests\\": "tests/"
+    }
+  }
+}
